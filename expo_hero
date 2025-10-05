@@ -1,0 +1,14 @@
+const melody = "[<~ ~ ~ <50 52>> 62 64 62 ~ 62 66 57]"
+setcpm(132/4)
+$: s("loops:15/2")
+  .fit().scrub(irand(16).div(16))
+  .seg(8).rib("<17 17 17 [17 12]>", 1).dec(.4).gain("[.5 .5 0 .5 .5 0 0 .5]").speed("<.1 .1 .1 [.1 .15]>").dist(2).hpf(300).lpf(900).room(.5).orbit(2)._scope()
+$: note("<26 26 30 28>/2").sound("saw").seg(8).dec(.3).lpf("100").lpe(2).lpd(.2).dist(2).orbit(2)
+
+$: note(melody).sound("gm_kalimba:2").dist(2).dec(.3)._punchcard()
+
+$: s("bd:4*4").duckorbit(2)
+$: s("~ <~ hh*8>").speed(.9)
+$: s("[~ oh:1]*4").dec(".3")
+// $: s("cp*3 ~"
+
